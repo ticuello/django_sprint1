@@ -51,10 +51,10 @@ def index(request):
     return render(request, template, context)
 
 
-def post_detail(request, id):
+def post_detail(request, pk):
     template = 'blog/detail.html'
     for post in posts:
-        if post['id'] == id:
+        if post['id'] == pk:
             context = {'post': post}
             return render(request, template, context)
     raise Http404
